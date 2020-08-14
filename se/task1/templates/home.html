@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task1</title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}
+		<label for="number1">Enter your First number</label>
+		<input type="number" name="number1">
+		<br>
+		<label for="number2">Enter your second number</label>
+		<input type="number" name="number2"><br>
+		
+		<input type="submit" name="" value="Submit">
+	</form>
+
+	{% if message %}
+		{{ message }}
+	{% endif %}
+
+	{% if not message %}
+		{% for i in nums %}
+		{{ i }}<br>
+		{% endfor %}
+	{% endif %}
+
+</body>
+</html>

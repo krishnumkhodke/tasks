@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}
+		<label for="email"> Enter the email you want to search : </label>
+		<input type="email" name="email">
+		
+		<input type="submit" name="" value="Submit">
+	</form>
+	<a href="{% url 'task2-home' %}">back to register</a>
+</body>
+</html>

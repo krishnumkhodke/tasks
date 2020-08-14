@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>User Name :{{ request.user.username }} </h1>
+	<br>
+	<button><a href="{% url 'log-out' %}">logout</a></button>
+	<button><a href="{% url 'task3-sign_up' %}">back to register</a></button>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{% if user.is_authenticated %}
+		<h3>Current signed in user :{{ request.user.username }} </h3>
+		<button><a href="{% url 'log-out' %}">logout</a></button>
+	{% endif %}
+	{% if not user.is_authenticated %}
+		<h3>No user signed in register here or login</h3>
+	{% endif %}
+	
+	<h1>{{ messag }}</h1>
+	<form method="POST">
+		{% csrf_token %}
+		<label for="fname">Enter Your First Name   :</label>
+		<input type="text" name="fname" required>
+		<br>
+		<label for="lname">Enter Your Last Name    :</label>
+		<input type="text" name="lname" required> 
+		<br>
+		<label for="username">Username             :</label>
+		<input type="text" name="username" required>
+		<br>
+		<label for="ph_no">Enter Your Phone Number :</label>
+		<input type="number" name="ph_no" required>
+		<br>
+		<label for="email">Enter Email             :</label>
+		<input type="email" name="email" required>
+		<br>
+		<label for="pass1">Password                :</label>
+		<input type="password" name="pass1" required>
+		<br>
+		<label for="pass2">Password conformation   :</label>
+		<input type="password" name="pass2" required>
+		<br>
+		<input type="submit" name="" value="register">
+	</form>
+
+	<p>Already Registered?<a href="{% url 'log-in' %}">login</a></p>
+</body>
+</html>

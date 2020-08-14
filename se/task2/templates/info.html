@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task2</title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" name="" value="Submit">
+	</form>
+
+	<p></p><a href="{% url 'search' %}">Already registered? Search</a>
+</body>
+</html>
